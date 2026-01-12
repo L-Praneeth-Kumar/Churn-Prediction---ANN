@@ -5,11 +5,14 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler, OneHotEncoder
 import pickle
 import streamlit as st
 
-#load the trained model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model("model.keras")
 
-#load the trained model
-model = tf.keras.models.load_model('model.h5')
+model.compile(
+    optimizer="adam",
+    loss="binary_crossentropy",
+    metrics=["accuracy"]
+)
+
 
 #load scaler and encoder
 with open('scaler.pkl','rb') as file:
