@@ -72,7 +72,7 @@ input_scaled = scaler.transform(input_df)
 prediction = model.predict(input_scaled)
 prediction_prob = prediction[0][0]
 
-print(f"Churn probability:{prediction_prob:.2f}")
+st.write(f"Churn probability:{prediction_prob:.2f}")
 
 if prediction_prob>0.5:
     st.write("Customer is likely to churn")
